@@ -144,6 +144,17 @@ body { font-family:'Noto Sans KR','Malgun Gothic','Pretendard','Segoe UI',sans-s
 @media (max-width: 420px){
   .nav button { font-size:.72rem; padding:14px 1px; }
 }
+@media (orientation:landscape) and (max-height:500px){
+  canvas.color-canvas { max-width:calc((100vh - 130px) * 1.13); }
+  .draw-box { display:block; max-width:calc((100vh - 150px) * 2.3); margin-left:auto; margin-right:auto; }
+}
+h3, h4, p, li, summary { overflow-wrap:anywhere; }
+.garden-head h3 { min-width:0; }
+@media (max-width: 360px){
+  .activity-grid { gap:12px; }
+  .activity-card { padding:14px; }
+  .badge-cert { width:110px; height:110px; font-size:.78rem; }
+}
 
 .plant-filter{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.filter{border:1px solid #d5ded5;background:#fff;color:#607067;padding:8px 12px;border-radius:999px;font-size:.78rem;font-weight:800;cursor:pointer;font-family:inherit}.filter.on{background:var(--green-deep);color:#fff}.plant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.plant-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eef3ee;box-shadow:0 4px 14px rgba(0,0,0,.05)}.plant-photo{aspect-ratio:1/1;background:#eef5ef}.plant-photo img{width:100%;height:100%;object-fit:cover}.plant-body{padding:12px}.plant-body h3{font-size:1.15rem;margin:5px 0}.plant-body p{font-size:.85rem;color:#6b7c70;margin:0;line-height:1.5}.tag{display:inline-block;padding:4px 9px;border-radius:999px;font-size:.74rem;font-weight:900}.tag.endemic{background:#e8f7ec;color:var(--green-deep)}.tag.danger{background:#fdecec;color:#a43b3b}@media(max-width:760px){.plant-grid{grid-template-columns:repeat(2,1fr)}}
 
@@ -200,6 +211,10 @@ body { word-break: keep-all; overflow-wrap: break-word; }
   .care-icon { width:144px; height:144px; }
   .care-card h4 { font-size:1rem; }
   .care-card p { font-size:.82rem; }
+}
+@media (min-width:560px){
+  .care-grid { grid-template-columns:repeat(2,1fr); }
+  .care-icon { width:120px; height:120px; }
 }
 @media (max-width:340px){
   .care-card { padding:14px 10px; gap:10px; }
