@@ -155,15 +155,20 @@ body { font-family:'Noto Sans KR','Malgun Gothic','Pretendard','Segoe UI',sans-s
 .nav button { line-height:1.25; }
 @media (max-width:560px){ .nav button .nbr { display:inline; } }
 
-.edu-dl { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:14px 22px; padding:6px 4px; margin-bottom:22px; }
-.edu-book { position:relative; flex:0 0 auto; width:128px; padding:0; border:0; background:none; cursor:pointer; filter:drop-shadow(4px 7px 8px rgba(0,60,30,.28)); transition:transform .2s; -webkit-tap-highlight-color:transparent; font-family:inherit; }
+.edu-dl { display:grid; grid-template-columns:1fr; justify-items:center; align-items:center; text-align:center; gap:18px 26px; padding:6px 4px; margin-bottom:22px; }
+.edu-book { position:relative; flex:0 0 auto; width:clamp(192px,56vw,240px); padding:0; border:0; background:none; cursor:pointer; filter:drop-shadow(4px 7px 8px rgba(0,60,30,.28)); transition:transform .2s; -webkit-tap-highlight-color:transparent; font-family:inherit; }
 .edu-book:hover { transform:translateY(-3px); }
 .edu-book:active { transform:scale(.97); }
 .edu-book:focus-visible { outline:3px solid var(--green); outline-offset:5px; }
 .edu-book img { display:block; width:100%; height:auto; border-radius:3px 7px 7px 3px; }
 .edu-book::before { content:''; position:absolute; left:0; top:0; bottom:0; width:9px; border-radius:3px 0 0 3px; background:linear-gradient(90deg,rgba(0,40,20,.45),rgba(255,255,255,.35) 45%,rgba(0,40,20,.12)); z-index:1; }
 .edu-book::after { content:''; position:absolute; right:-4px; top:3px; bottom:3px; width:4px; border-radius:0 3px 3px 0; background:repeating-linear-gradient(180deg,#fff 0 2px,#d9e4dc 2px 3px); }
-.edu-info { display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:0; }
+.edu-info { display:flex; flex-direction:column; align-items:center; gap:10px; min-width:0; }
+@media (min-width:560px){
+  .edu-dl { grid-template-columns:auto 1fr; justify-items:stretch; text-align:left; }
+  .edu-book { width:200px; }
+  .edu-info { align-items:flex-start; }
+}
 .edu-tag { font-size:.72rem; font-weight:800; color:var(--green-deep); background:#fff; border:1px solid #cfe8d6; border-radius:999px; padding:3px 10px; }
 .edu-title { grid-column:1 / -1; font-size:clamp(.88rem,4.7vw,1.2rem); line-height:1.35; color:var(--green-deep); font-weight:900; white-space:nowrap; }
 .edu-meta { font-size:.74rem; color:#6b7c70; }
@@ -172,7 +177,7 @@ body { font-family:'Noto Sans KR','Malgun Gothic','Pretendard','Segoe UI',sans-s
 .edu-btn.ghost { background:#fff; color:var(--green-deep); box-shadow:none; }
 .edu-btn:focus-visible { outline:3px solid var(--green); outline-offset:3px; }
 .edu-btn svg { width:16px; height:16px; }
-@media (max-width:340px){ .edu-dl { gap:14px; } .edu-book { width:98px; } .edu-btn { padding:8px 12px; font-size:.8rem; } }
+@media (max-width:340px){ .edu-dl { gap:14px; } .edu-btn { padding:8px 12px; font-size:.8rem; } }
 .edu-viewer-bg { display:none; position:fixed; inset:0; background:rgba(17,18,34,.6); z-index:110; align-items:center; justify-content:center; padding:14px; }
 .edu-viewer-bg.show { display:flex; }
 .edu-viewer { position:relative; display:flex; flex-direction:column; width:100%; max-width:600px; height:calc(100vh - 28px); height:calc(100dvh - 28px); background:#eef4ef; border-radius:18px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35); }
